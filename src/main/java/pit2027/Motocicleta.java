@@ -1,0 +1,48 @@
+package pit2027;
+
+import org.json.JSONObject;
+
+public class Motocicleta extends Vehiculo {
+
+    int cilindrada;
+
+    public Motocicleta(String matricula, Categoria categoria, int annio,
+        int cilindrada
+    ) {
+        super(matricula, categoria, annio);
+        this.cilindrada = cilindrada;
+    }
+
+    public Motocicleta(String jsonString) {
+        super(jsonString);
+        JSONObject json = new JSONObject(jsonString);
+        this.cilindrada = json.getInt("cilindrada");
+    }
+
+    public int getCilindrada() {
+        return cilindrada;
+    }
+
+    @Override 
+    public String getTipo() {
+        return "Motocicleta";
+    }
+
+    @Override
+    public int getPrecioBase() {
+        int precioBase = 0;
+        switch (getCategoria()) {
+            case NORMAL:
+                precioBase = 20;
+                break;
+            case ESPECIAL:
+                precioBase = 40;
+                break;
+            case SUPERIOR:
+                precioBase = 60;
+                break;
+        }
+        return precioBase;
+    }
+
+}

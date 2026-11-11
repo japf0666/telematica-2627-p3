@@ -1,0 +1,14 @@
+[
+  {
+    "dni": "001",
+    "matricula": "TNA2020",
+    "fechaInicio": "2026-10-28",
+    "fechaFin": "2026-10-30"
+  },
+  {
+    "dni": "002",
+    "matricula": "MNA2021",
+    "fechaInicio": "2026-10-29",
+    "fechaFin": "2026-10-29"
+  }
+]
