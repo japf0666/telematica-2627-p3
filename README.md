@@ -30,7 +30,11 @@ El auxiliar trabaja con listas completas, sin elementos nulos. Al recuperar, reu
 
 RF-01 y RF-02: migración de alquileres y catálogos a colecciones genéricas. RF-03, RF-04 y RF-05: nuevas consultas, ordenación e informe. RF-06 y RF-07: escritura y lectura de ficheros. RF-08 y RF-09: integración de las funciones nuevas y sus errores. Las consultas existentes de P2 se conservan y deberán seguir funcionando.
 
-No se proporcionan clases de persistencia ni esqueletos que condicionen el diseño. Las pruebas heredadas del gestor usan arrays: se adaptarán cuando cambien los contratos. Las pruebas `ConversorAlquileresJsonTest` verifican exclusivamente la infraestructura proporcionada; no son pruebas de aceptación de la P3 pendiente.
+No se proporcionan clases de persistencia ni esqueletos que condicionen el diseño. Las pruebas `ConversorAlquileresJsonTest` verifican exclusivamente la infraestructura proporcionada; no son pruebas de aceptación de la P3 pendiente.
+
+Al sustituir los arrays por colecciones genéricas, será necesario adaptar también las pruebas de P2 que dependan de los tipos de retorno anteriores. Esta adaptación forma parte de RF-01 y RF-02 y corresponde al alumnado como actividad formativa; no se proporcionan las pruebas ya modificadas.
+
+El conversor recibe listas de clientes y vehículos, mientras que el gestor de P2 mantiene ambos catálogos como arrays privados. La migración de RF-02 debe permitir que la recuperación de RF-07 utilice los clientes y vehículos existentes. Ambas tareas deben coordinarse para reutilizar esos catálogos, sin reconstruir clientes o vehículos duplicados ni crear catálogos independientes o estructuras auxiliares innecesarias. No se prescribe una API concreta para ese acceso.
 
 La planificación aprobada es de 23,5 horas-persona y 8,5 de reserva, máximo 32 entre dos estudiantes, incluyendo pruebas, integración, Git y documentación. No se exigen bibliotecas nuevas, Swing, SQLite, concurrencia ni patrones nuevos.
 
